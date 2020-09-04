@@ -14,7 +14,7 @@ def read_item(item_id: int, q: str = None):
 
 
 @app.get("/fizz_buzz/{num}")
-def read_item(num: int):
+def read_item2(num: int):
     # https: // ja.wikipedia.org / wiki / Fizz_Buzz
     if not num % 15:
         return {num: "Fizz Buzz"}
