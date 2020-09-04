@@ -22,3 +22,5 @@ def read_item(num: int):
         return {num: 'Fizz' if not num % 3 else 'Buzz'}
     else:
         return {num: 'Stay Silent'}
+
+#C:/Users/Luca/AppData/Local/Microsoft/WindowsApps/python.exe -m pip install fastapi
