@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+import json
 
 class HTMLTableParser:
     
@@ -88,7 +89,9 @@ def read_item(item_id: int, q: str = None):
 @app.get("/dolar")
 def dolar():
     data = table.to_json(orient="index", indent=4)
-    response = data
+    #data = table.to_json(orient="index", force_ascii=False, indent=4)
+    response = json.dumps(data)
+    #response = data
     return response
 
 
