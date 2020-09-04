@@ -13,3 +13,4 @@ websockets==7.0
 requests
 pandas
 beautifulsoup4
+lxml
