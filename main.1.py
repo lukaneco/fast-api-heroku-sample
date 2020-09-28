@@ -69,10 +69,10 @@ table = hp.parse_url(url)[0][1] # Grabbing the table from the tuple
 #print(type(table))
 
 
-#print(table.to_json(orient="index", force_ascii=False, indent=4))
+print(table.to_json(orient="index", force_ascii=False, indent=4))
 
 from fastapi import FastAPI
-
+import uvicorn
 app = FastAPI()
 
 
@@ -93,7 +93,8 @@ def read_item(item_id: int, q: str = None):
 def dolar():
     #data = table.to_json(orient="index", indent=4)
     #data = table.to_json(orient="index", force_ascii=False, indent=4)
-    data = table.to_json(orient="index", force_ascii=False)
+    data = table.to_json(orient="index", force_ascii=True)
+    print(data)
     #response = json.dumps(data)
     response = data
     return response
@@ -110,3 +111,6 @@ def read_item2(num: int):
     else:
         return {num: 'Stay Silent'}
 #C:/Users/Luca/AppData/Local/Microsoft/WindowsApps/python.exe -m pip install fastapi
+#if __name__ == "__main__":
+#uvicorn.run(app, host="127.0.0.1", port=8000,reload=True)
+#uvicorn.run(app, port=5000, reload=True, access_log=False)
